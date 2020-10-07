@@ -48,9 +48,9 @@ db.once('open',()=>{
     console.log( chalk.greenBright( " Success"));
 })
 
-app.listen(4040, function () {
-  console.log(chalk.yellowBright("port 4040 is now active !!!"));
-});
-// app.listen(process.env.PORT||3000,()=>{
-//     console.log(chalk.yellowBright(`port ${chalk.redBright(process.env.PORT)} is active`))
+// app.listen(4040, function () {
+//   console.log(chalk.yellowBright("port 4040 is now active !!!"));
 // });
+app.listen(process.env.PORT||3000,()=>{
+    console.log(chalk.yellowBright(`port ${chalk.redBright(process.env.PORT)} is active`))
+});
