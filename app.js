@@ -14,7 +14,7 @@ const adminRouter= require('./src/routers/admin')();
 const qustiRouter=require('./src/routers/question')();
 const fameRoute=require('./src/routers/wallOfFame')();
 const SmaterialRoute=require('./src/routers/Smaterials')();
-
+const ContactRoute=require('./src/routers/contact')();
 app.use(express.static(path.join(__dirname,"/public")));
 /////using body parser to handle requestes
 app.use(cors());
@@ -30,7 +30,7 @@ app.use('/admin',adminRouter);
 app.use('/question',qustiRouter);
 app.use('/famewall',fameRoute);
 app.use('/material',SmaterialRoute);
-
+app.use('/contact',ContactRoute);
 app.get('/', function (req, res) {
   res.send('node works fine !');
 });
@@ -48,9 +48,9 @@ db.once('open',()=>{
     console.log( chalk.greenBright( " Success"));
 })
 
-// app.listen(4040, function () {
-//   console.log(chalk.yellowBright("port 4040 is now active !!!"));
-// });
-app.listen(process.env.PORT||3000,()=>{
-    console.log(chalk.yellowBright(`port ${chalk.redBright(process.env.PORT)} is active`))
+app.listen(4040, function () {
+  console.log(chalk.yellowBright("port 4040 is now active !!!"));
 });
+// app.listen(process.env.PORT||3000,()=>{
+//     console.log(chalk.yellowBright(`port ${chalk.redBright(process.env.PORT)} is active`))
+// });
